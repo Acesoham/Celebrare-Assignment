@@ -1,4 +1,4 @@
-export default function SearchBar({ value, onChange }) {
+export default function SearchBar({ value, onSearchChange }) {
   return (
     <div className="relative w-full max-w-md">
       <svg
@@ -17,7 +17,7 @@ export default function SearchBar({ value, onChange }) {
         id="photographer-search"
         type="search"
         value={value}
-        onChange={onChange}
+        onChange={(event) => onSearchChange(event.currentTarget.value)}
         placeholder="Search photographers by name..."
         className="w-full rounded-md border border-[#e4e0da] bg-white py-3.5 pl-12 pr-4 text-sm text-[#242127] outline-none transition placeholder:text-[#99939b] focus:border-[#6d3fa0] focus:ring-2 focus:ring-[#6d3fa0]/10"
       />

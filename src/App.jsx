@@ -30,15 +30,17 @@ export default function App() {
     }
   }, [favourites]);
 
-  const handleSearchChange = useCallback((event) => {
-    setSearchQuery(event.target.value);
+  const handleSearchChange = useCallback((query) => {
+    setSearchQuery(query);
   }, []);
 
   const filteredPhotos = useMemo(() => {
     const normalizedQuery = searchQuery.trim().toLowerCase();
     if (!normalizedQuery) return photos;
 
-    return photos.filter((photo) => photo.author.toLowerCase().includes(normalizedQuery));
+    return photos.filter((photo) =>
+      String(photo.author ?? "").toLowerCase().includes(normalizedQuery),
+    );
   }, [photos, searchQuery]);
 
   const handleToggleFavourite = useCallback((photoId) => {
@@ -55,7 +57,7 @@ export default function App() {
       <main>
         <Hero />
         <section className="mx-auto max-w-7xl px-5 pb-4 sm:px-8 lg:px-12" aria-label="Photo collection">
-          <SearchBar value={searchQuery} onChange={handleSearchChange} />
+          <SearchBar value={searchQuery} onSearchChange={handleSearchChange} />
         </section>
 
         <section className="mx-auto max-w-7xl px-5 pb-2 pt-5 sm:px-8 lg:px-12" aria-live="polite">
