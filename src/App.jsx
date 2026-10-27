@@ -56,11 +56,11 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <section className="mx-auto max-w-7xl px-5 pb-4 sm:px-8 lg:px-12" aria-label="Photo collection">
+        <section className="mx-auto max-w-7xl px-5 pb-5 sm:px-8 lg:px-12" aria-label="Photo collection">
           <SearchBar value={searchQuery} onSearchChange={handleSearchChange} />
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 pb-2 pt-5 sm:px-8 lg:px-12" aria-live="polite">
+        <section className="mx-auto max-w-7xl px-5 pb-2 pt-4 sm:px-8 lg:px-12" aria-live="polite">
           {loading ? (
             <LoadingSpinner />
           ) : error ? (

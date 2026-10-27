@@ -3,7 +3,7 @@ export default function SearchBar({ value, onSearchChange }) {
     <div className="relative w-full max-w-md">
       <svg
         aria-hidden="true"
-        className="pointer-events-none absolute left-4 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-[#8d8790]"
+        className="pointer-events-none absolute left-[18px] top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-[#827b86]"
         viewBox="0 0 24 24"
         fill="none"
       >
@@ -19,7 +19,7 @@ export default function SearchBar({ value, onSearchChange }) {
         value={value}
         onChange={(event) => onSearchChange(event.currentTarget.value)}
         placeholder="Search photographers by name..."
-        className="w-full rounded-md border border-[#e4e0da] bg-white py-3.5 pl-12 pr-4 text-sm text-[#242127] outline-none transition placeholder:text-[#99939b] focus:border-[#6d3fa0] focus:ring-2 focus:ring-[#6d3fa0]/10"
+        className="w-full rounded-lg border border-[#e5e1db] bg-white py-4 pl-[50px] pr-4 text-sm text-[#242127] shadow-[0_3px_14px_rgba(36,33,39,0.035)] outline-none transition duration-200 placeholder:text-[#99939b] hover:border-[#d1c9d8] focus:border-[#6d3fa0] focus:ring-4 focus:ring-[#6d3fa0]/[0.08]"
       />
     </div>
   );

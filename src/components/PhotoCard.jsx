@@ -1,16 +1,16 @@
 export default function PhotoCard({ photo, isFavourite, onToggleFavourite }) {
   return (
-    <article className="group overflow-hidden rounded-md border border-[#e9e6e1] bg-white shadow-[0_2px_10px_rgba(36,33,39,0.035)] transition-shadow duration-200 hover:shadow-[0_8px_24px_rgba(36,33,39,0.09)]">
-      <div className="aspect-[10/7] overflow-hidden bg-[#eeece8]">
+    <article className="group overflow-hidden rounded-lg border border-[#e9e6e1] bg-white shadow-[0_3px_12px_rgba(36,33,39,0.035)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(36,33,39,0.11)]">
+      <div className="aspect-[4/3] overflow-hidden bg-[#eeece8]">
         <img
-          src={`https://picsum.photos/id/${photo.id}/600/420`}
+          src={`https://picsum.photos/id/${photo.id}/600/450`}
           alt={`Photograph by ${photo.author}`}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.025]"
+          className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.035]"
         />
       </div>
-      <div className="flex min-h-[60px] items-center justify-between gap-3 px-4 py-3">
-        <p className="truncate text-sm font-medium text-[#39353d]">{photo.author}</p>
+      <div className="flex min-h-[68px] items-center justify-between gap-3 px-4 py-3 sm:px-[18px]">
+        <p className="truncate text-sm font-medium tracking-[0.005em] text-[#39353d]">{photo.author}</p>
         <button
           type="button"
           onClick={() => onToggleFavourite(photo.id)}
