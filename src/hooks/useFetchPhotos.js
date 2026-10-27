@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-const PHOTOS_API = "https://picsum.photos/v2/list?limit=30";
+// Page 2 keeps the same Picsum API and 30-photo limit, with a different photo set.
+const PHOTOS_API = "https://picsum.photos/v2/list?page=2&limit=30";
 
 export default function useFetchPhotos(retryKey) {
   const [photos, setPhotos] = useState([]);

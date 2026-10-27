@@ -16,11 +16,15 @@ export default function PhotoCard({ photo, isFavourite, onToggleFavourite }) {
           onClick={() => onToggleFavourite(photo.id)}
           aria-label={isFavourite ? `Remove ${photo.author} from favourites` : `Add ${photo.author} to favourites`}
           aria-pressed={isFavourite}
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[#77727b] transition-colors hover:bg-[#f5f1f8] hover:text-[#6d3fa0] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6d3fa0]"
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-200 ease-out active:scale-125 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6d3fa0] ${
+            isFavourite
+              ? "scale-110 text-[#e5484d] hover:bg-[#fff0f0] hover:text-[#d7373c]"
+              : "text-[#77727b] hover:bg-[#f5f1f8] hover:text-[#6d3fa0]"
+          }`}
         >
           <svg
             aria-hidden="true"
-            className="h-[19px] w-[19px]"
+            className="h-[19px] w-[19px] transition-colors duration-200"
             viewBox="0 0 24 24"
             fill={isFavourite ? "currentColor" : "none"}
             stroke="currentColor"
